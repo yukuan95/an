@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^26.0.0",
+    "fs-extra": "^11.3.5"
+  }
+}

@@ -32,5 +32,4 @@ function Dropdown({ value, array, width, isDarkMode, onChange }: Props) {
   </div >
 }
 
-
 export { Dropdown }
