@@ -29,7 +29,7 @@ function Dropdown({ value, array, width, isDarkMode, onChange }: Props) {
         </Button>
       </AntdDropdown>
     </ConfigProvider>
-  </div >
+  </div>
 }
 
 export { Dropdown }

@@ -23,12 +23,12 @@ async function remove(filePath: string) {
 }
 
 async function main() {
-  await remove(relativeRoot('/../assets'))
-  await remove(relativeRoot('/../favicon.svg'))
-  await remove(relativeRoot('/../index.html'))
-  await copy(relativeRoot('/../react-test/dist/assets'), relativeRoot('/../assets'))
-  await copy(relativeRoot('/../react-test/dist/favicon.svg'), relativeRoot('/../favicon.svg'))
-  await copy(relativeRoot('/../react-test/dist/index.html'), relativeRoot('/../index.html'))
+  await remove(relativeRoot('../assets'))
+  await remove(relativeRoot('../favicon.svg'))
+  await remove(relativeRoot('../index.html'))
+  await copy(relativeRoot('../react-test/dist/assets'), relativeRoot('../assets'))
+  await copy(relativeRoot('../react-test/dist/favicon.svg'), relativeRoot('../favicon.svg'))
+  await copy(relativeRoot('../react-test/dist/index.html'), relativeRoot('../index.html'))
 }
 
 main()

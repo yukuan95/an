@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MonthPicker } from './Components/MonthPicker'
+import { LeftArrowButton, RightArrowButton } from './Components/ArrowButton'
 import { Dropdown } from './Components/Dropdown'
 import { Button } from 'antd'
 import { css } from '@emotion/css'
@@ -10,7 +11,7 @@ function App() {
   let [d, setD] = useState('1')
   return (
     <>
-      <div className={css` padding: 20px; `}>
+      <div className={css` padding: 20px; background-color: ${isDarkMode ? '#2A2A2A' : '#FFFFFF'}; `}>
         <div><Button onClick={() => {
           setIsDarkMode(!isDarkMode)
         }}>click</Button></div>
@@ -31,6 +32,16 @@ function App() {
             onChange={(res) => setD(res)}>
           </Dropdown>
         </div>
+        <div className={css` height: 20px; `}></div>
+        <div className={css` display: flex; gap: 15px; `}>
+          <LeftArrowButton isDarkMode={isDarkMode} onClick={() => {
+            console.log('1')
+          }}></LeftArrowButton>
+          <RightArrowButton isDarkMode={isDarkMode} onClick={() => {
+            console.log('2')
+          }}></RightArrowButton>
+        </div>
+        <div className={css` height: 20px; `}></div>
       </div>
     </>
   )
