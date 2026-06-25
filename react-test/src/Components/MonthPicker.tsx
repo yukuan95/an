@@ -23,7 +23,7 @@ function MonthPicker({ value, width, isDarkMode, onChange }: Props) {
     dayjsValue = dayjs().year(year).month(month)
   }
   const [open, setOpen] = useState(false)
-  return <div className={css` position: relative; `}>
+  return <div className={css` display: inline-flex; `}>
     <ConfigProvider
       theme={{
         algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,

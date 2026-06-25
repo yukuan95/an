@@ -9,27 +9,25 @@ function Dropdown({ value, array, width, isDarkMode, onChange }: Props) {
   const menuProps = {
     items, onClick: (res: any) => onChange(res.key),
   }
-  return <div>
-    <ConfigProvider
-      wave={{ disabled: true }}
-      theme={{
-        algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-        components: {
-          Button: {
-            defaultColor: isDarkMode ? '#FFFFFF' : '#000000',
-            defaultHoverColor: isDarkMode ? '#FFFFFF' : '#000000',
-            defaultActiveColor: isDarkMode ? '#FFFFFF' : '#000000',
-          },
+  return <ConfigProvider
+    wave={{ disabled: true }}
+    theme={{
+      algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      components: {
+        Button: {
+          defaultColor: isDarkMode ? '#FFFFFF' : '#000000',
+          defaultHoverColor: isDarkMode ? '#FFFFFF' : '#000000',
+          defaultActiveColor: isDarkMode ? '#FFFFFF' : '#000000',
         },
-      }}>
-      <AntdDropdown menu={menuProps} trigger={['click']}>
-        <Button className={css` width: ${width}; justify-content: space-between; `}
-          icon={<DownOutlined />} iconPlacement="end">
-          {array.find((item) => item === value) ? value : ''}
-        </Button>
-      </AntdDropdown>
-    </ConfigProvider>
-  </div>
+      },
+    }}>
+    <AntdDropdown menu={menuProps} trigger={['click']}>
+      <Button className={css` width: ${width}; justify-content: space-between; `}
+        icon={<DownOutlined />} iconPlacement="end">
+        {array.find((item) => item === value) ? value : ''}
+      </Button>
+    </AntdDropdown>
+  </ConfigProvider>
 }
 
 export { Dropdown }

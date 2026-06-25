@@ -35,10 +35,8 @@ function App() {
         <div className={css` height: 20px; `}></div>
         <div className={css` display: flex; gap: 15px; `}>
           <LeftArrowButton isDarkMode={isDarkMode} onClick={() => {
-            console.log('1')
           }}></LeftArrowButton>
           <RightArrowButton isDarkMode={isDarkMode} onClick={() => {
-            console.log('2')
           }}></RightArrowButton>
         </div>
         <div className={css` height: 25px; `}></div>
