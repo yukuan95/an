@@ -23,7 +23,7 @@ function MonthPicker({ value, width, isDarkMode, onChange }: Props) {
     dayjsValue = dayjs().year(year).month(month)
   }
   const [open, setOpen] = useState(false)
-  return <div className={css` display: inline-flex; `}>
+  return <span>
     <ConfigProvider
       theme={{
         algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
@@ -38,33 +38,31 @@ function MonthPicker({ value, width, isDarkMode, onChange }: Props) {
         },
       }}
       wave={{ disabled: true }}>
-      <div className={css` position: absolute; z-index: 1; `}>
-        <Button
-          iconPlacement="end"
-          icon={<DownOutlined />}
-          disabled={open ? true : false}
-          onClick={() => setOpen(true)}
-          className={css`
-            width: ${width}; height: 32px;
-            justify-content: space-between;
-            cursor: pointer !important;
-          `}>
-          <span>{getDateString(dayjsValue)}</span>
-        </Button>
-      </div>
-      <div>
-        <DatePicker
-          open={open}
-          picker="month"
-          value={dayjsValue}
-          inputReadOnly={true}
-          onOpenChange={(open) => setOpen(open)}
-          style={{ width: width, height: '32px' }}
-          onChange={(newValue) => onChange(getDateString(newValue))}
-        />
-      </div>
+      <Button
+        iconPlacement="end"
+        icon={<DownOutlined />}
+        disabled={open ? true : false}
+        onClick={() => setOpen(true)}
+        className={css`
+          width: ${width}; height: 32px;
+          justify-content: space-between;
+          cursor: pointer !important;
+          position: absolute; z-index: 1;
+        `}
+      >
+        <span>{getDateString(dayjsValue)}</span>
+      </Button>
+      <DatePicker
+        open={open}
+        picker="month"
+        value={dayjsValue}
+        inputReadOnly={true}
+        onOpenChange={(open) => setOpen(open)}
+        style={{ width: width, height: '32px' }}
+        onChange={(newValue) => onChange(getDateString(newValue))}
+      />
     </ConfigProvider>
-  </div>
+  </span>
 }
 
 export { MonthPicker }
